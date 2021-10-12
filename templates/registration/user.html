@@ -1,0 +1,26 @@
+{% extends "main.html" %}
+{% block title %}Your profile{% endblock %}
+{% block content %}
+    <div>
+                        <h6 class="mb-0 us">First Name</h6>
+                                    {% if object.first_name %}
+                                        {{ object.first_name }}
+                                    {% endif %}
+                                </div><div>
+                            <hr>
+                                    <h6 class="mb-0 us">Last Name</h6>
+                                </div> <div>
+                                    {% if object.last_name %}
+                                        {{ object.last_name }}
+                                    {% endif %}
+                                </div> <div>
+                            <hr>
+                                    <h6 class="mb-0 us">Email</h6>
+                                </div> <div>
+                                    {{ object.email }}
+                            </div> <div>
+
+                            <hr>
+                                     <a>  href="{% url 'profile_edit' pk=object.pk %}">Edit</a>
+                               </div>
+{% endblock %}
